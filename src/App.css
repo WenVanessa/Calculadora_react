@@ -1,38 +1,124 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=DynaPuff:wght@400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #E6E6FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "DynaPuff", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.calculadora {
+  background-color: #D3D3D3;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 300px;
+  padding: 1.3rem;
+  border-radius: 1.3rem;
+  gap: 0.7rem;
+}
+
+.pantalla {
+  grid-column: 1 / 5;
+  background-color: #ffc0cb;
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: right;
+  border-radius: 0.8rem;
+  font-weight: 550;
+  margin-bottom: 0.5rem;
+}
+
+.boton {
+  background-color: #ffc0cb;
+  color: black;
+  border: 0;
+  padding: 1rem;
+  font-size: 1rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #FFF0F5;
+}
+
+#cero {
+  grid-column: span 2; 
+}
+
+#igual {
+  grid-row: span 2;
+  background-color: #F0D8D9;
+}
+
+#igual:hover {
+  background-color: white;
+}
+
+.limpiar-historial {
+  background-color: #D3D3D3; /* Tomate */
+  color: black;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.8rem;
+  font-family: "DynaPuff", system-ui;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.limpiar-historial:hover {
+  background-color: white; /* Rojo más oscuro */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contenedor-calculadora-historial {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start; 
+  gap: 20px; 
 }
 
-.App-link {
-  color: #61dafb;
+.historial {
+  max-width: 200px; 
+  overflow-y: auto; 
+  border: 3px solid #ccc; 
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffc0cb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titulo-historial {
+  text-align: center;
+  font-size: 25px;
+  left: 50%;
+  font-family: "DynaPuff", system-ui;
+  font-weight: 100;
+  font-style: normal;
 }
